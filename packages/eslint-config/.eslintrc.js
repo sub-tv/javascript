@@ -11,5 +11,8 @@ module.exports = {
   ],
   rules: {
     "@typescript-eslint/no-non-null-assertion": 0
+  },
+  env: {
+    "jest/globals": true
   }
 };
