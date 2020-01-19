@@ -11,7 +11,9 @@ jobs:
       - name: Create npmrc
         run: touch ~/.npmrc | echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+        yarn --frozen-lockfile
+        yarn lerna bootstrap
       - name: Publish
         run: yarn release
         env:
